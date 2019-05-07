@@ -19,7 +19,6 @@ namespace muvs {
         if(port==0){
             uBit.init();
             serial=new MicroBitSerial(MICROBIT_PIN_P1,MICROBIT_PIN_P2);
-            mu->begin(serial,kSerialMode);
         }
         else if(port==1)
         {
