@@ -10,12 +10,14 @@ namespace muvs {
     MuVisionSensor* MU[4]={Mu0,Mu1,Mu2,Mu3};
     MicroBitSerial *serial=nullptr;
     MicroBitI2C *i2c=nullptr; 
-
+    MicroBit uBit;
+    
     //% 
     void begin(int id, int port){
         MU[id] = new MuVisionSensor(0x60+id);
         MuVisionSensor *mu = MU[id];
         if(port==0){
+            uBit.init();
             serial=new MicroBitSerial(MICROBIT_PIN_P1,MICROBIT_PIN_P2);
             mu->begin(serial,kSerialMode);
         }
