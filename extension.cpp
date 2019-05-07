@@ -17,7 +17,7 @@ namespace muvs {
         MuVisionSensor *mu = MU[id];
         if(port==0){
    //         serial=new MicroBitSerial(MICROBIT_PIN_P0,MICROBIT_PIN_P1);
-            serial=new uBit.serial.redirect(MICROBIT_PIN_P0, MICROBIT_PIN_P1)
+            serial=new uBit.serial.redirect(MICROBIT_PIN_P0, MICROBIT_PIN_P1);
             mu->begin(serial,kSerialMode);
         }
         else if(port==1)
